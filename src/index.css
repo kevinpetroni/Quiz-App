@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik Puddles', cursive;
+  font-size: 200px;
+  color: white;
+  text-align: center;
+  margin-top: 1px;
+}
+body,
+html {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(https://r4.wallpaperflare.com/wallpaper/248/987/618/gradient-purple-blue-5k-wallpaper-77bfb2c4cf15af9aaf024491914187c5.jpg)
+}
