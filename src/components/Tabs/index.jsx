@@ -1,9 +1,11 @@
-import { Tabs,  TabList, Tab, TabIndicator, TabPanels, TabPanel, Flex} from "@chakra-ui/react"
+import { Tabs,  TabList, Tab, TabIndicator, TabPanels, TabPanel, Flex, ChakraProvider} from "@chakra-ui/react"
 import Conteudo from "../Conteudo/conteudo"
-const Pergunta = () => {
 
+
+const Pergunta = () => {
     return (
         <>
+        <ChakraProvider >
        <Flex 
             as="form"
             width="100%"
@@ -31,6 +33,7 @@ const Pergunta = () => {
         </TabPanels>
       </Tabs>
       </Flex>
+      </ChakraProvider>
       </>
     )
 }

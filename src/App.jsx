@@ -1,20 +1,21 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import './App.css'
-import Pergunta from './components/Tabs'
+import { useContext } from "react"
+import { QuizContext } from "./context/quiz"
+import Welcome from "./components/Welcome/Welcome"
+import Pergunta from "./components/Tabs"
 
+
+
+// import { QuizContext } from "../context/quiz"
 function App() {
-
+  const [quizState] = useContext(QuizContext)
 
   return (
     <>
-   
       <div>
       <h1>Quiz App</h1>
-      <ChakraProvider >
-      <Pergunta />
-      </ChakraProvider>
+     {quizState.gameStage === "Start" && <Welcome />}
+     {quizState.gameStage === "Playing" &&  <Pergunta />}
       </div>
-  
 
     </>
   )

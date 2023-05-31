@@ -7,7 +7,7 @@ const Conteudo = () => {
        <Text fontSize='2xl' textAlign="center">Qual tag cria um parágrafo?</Text>
       <Box mt={4}>
         <VStack>
-        <Button w="100%" variant='outline'>Tetset</Button>
+        <Button w="100%" variant='outline' value="teste">Teste</Button>
         <Button w="100%" variant='outline'>Tetset</Button>
         </VStack>
       </Box>
