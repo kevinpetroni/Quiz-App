@@ -1,17 +1,46 @@
-import { useContext } from "react"
-import { QuizContext } from "../../context/quiz"
+import { ChakraProvider, FormControl, Heading, Button, Box, FormLabel, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, Divider, VStack, HStack } from "@chakra-ui/react"
+
 
 
 const Welcome = () => {
-    const [dispatch] = useContext(QuizContext)
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-        <div id="Welcome">
-            <h2>Seja bem-vindo </h2>
-            <p>Clique para começar:</p>
-            <button  onClick={() => dispatch({type: "CHANGE_STATE"})}>
-                Iniciar
-            </button>
-        </div>
+        <ChakraProvider >
+            <FormControl  maxHeight={1000}>
+                <Box bg="purple.200" h="100vh">
+            <Heading textAlign="center">Seja bem vindo ao Quiz KA</Heading>
+          
+            <HStack mt={5} justifyContent="center">
+                <VStack>
+                <FormLabel>Escolha a categoria para começarmos:</FormLabel>
+            <Button colorScheme='teal' variant='outline' onClick={onOpen}>
+                Categorias
+                </Button>
+                </VStack>
+                </HStack>
+                
+                </Box>
+            <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                    <ModalHeader>Categorias 📚</ModalHeader>
+                    <Divider />
+                    <ModalCloseButton />
+                    <ModalBody >
+                    <FormLabel textAlign="center">Escolha uma Categoria</FormLabel>
+                        <VStack spacing={4} mt={4}>
+                        <Button w={100}>HTML</Button>
+                        <Button w={100}>CSS</Button>
+                        <Button w={100}>JavaScript</Button>
+                        </VStack>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
+                
+               
+            </FormControl>
+      {/* <Pergunta /> */}
+      </ChakraProvider>
     )
 }
 
